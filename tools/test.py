@@ -193,7 +193,7 @@ def apply_iou_filter(scores: torch.Tensor,
         ref_bbox = init_box[current_idx]
       
         
-        reliability.append((0.5 + 0.5 / (1 + np.exp(-10 * (remove_score - 0.5)))).sum().item())
+        reliability.append((0.2 + 0.8 / (1 + np.exp(-10 * (remove_score - 0.5)))).sum().item())
        
         if removed_box.numel() != 0: 
           
@@ -399,16 +399,14 @@ def main():
                 
                 # consistency
                 iou_closeness = 0.5*consistency_iou + 0.5*consistency_closeness
-                conf_down  = 1 / (1 + np.exp(100 * (conf - 0.6)))
-                conf_down = sigmoid(conf, 0.6, -100, 0)
+                conf_down = sigmoid(conf, 0.5, -60, 0)
                 low_count = iou_closeness * conf_down
                 if low_count.sum()/keep.sum() > 0:
                     score_consistency.append(low_count.sum()/keep.sum())
 
                 # reliability
-                conf_up = conf > 0.6
-                under = (0.5 + 0.5 / (1 + np.exp(-10 * (score_all[~keep] - 0.6)))).sum() 
-                under = (sigmoid(score_all[~keep], 0.6, 10, 0.3)).sum()
+                conf_up = conf > 0.5
+                under = (sigmoid(score_all[~keep], 0.5, 10, 0.2)).sum()
                 ratio = reliability[conf_up].sum()/under
                 if under.item() > 0 :
                     score_reliability.append(ratio.item())
