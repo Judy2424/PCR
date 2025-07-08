@@ -1,9 +1,0 @@
-python dtool_person/metaset_imagenetc/generate_caltech_meta_set.py
-python dtool_person/metaset_imagenetc/generate_citypersons_meta_set.py
-python dtool_person/metaset_imagenetc/generate_cityscapes_meta_set.py
-python dtool_person/metaset_imagenetc/generate_coco_meta_set.py
-python dtool_person/metaset_imagenetc/generate_crowdhuman_meta_set.py
-python dtool_person/metaset_imagenetc/generate_ECP_meta_set.py
-python dtool_person/metaset_imagenetc/generate_Exdark_meta_set.py
-python dtool_person/metaset_imagenetc/generate_kitti_meta_set.py
-python dtool_person/metaset_imagenetc/generate_self_driving_meta_set.py
