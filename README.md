@@ -9,6 +9,7 @@ mim install mmcv-full==1.7.2
 ```python
 # Vehicle 
 bash scripts/metaset_generate_inc/all.sh
+
 # Pedestrian
 bash scripts_pedestrian/metaset_generate_inc_person/all.sh
 ```
