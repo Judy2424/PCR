@@ -23,7 +23,7 @@ except:
 
 ROOT_DIR = "./person_sample_250_images/citypersons"
 IMAGE_DIR = "./person_sample_250_images/citypersons"
-TARGET_DIR = "./pdata_inc_person/citypersons/meta"
+TARGET_DIR = "./data_inc_person/citypersons/meta"
 num_meta_dataset = 50
 
 with open(ROOT_DIR + "/citypersons_annotations_sample_img_250.json",'r') as load_f:
